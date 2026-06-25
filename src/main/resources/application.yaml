@@ -18,3 +18,11 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  logging:
+    file:
+      name: C:/applications/logins/logs/logins.log
+    pattern:
+      file: "%d{yyyy-MM-dd HH:mm:ss} %-5level [${spring.application.name}] - %msg%n"
+    level:
+      root: INFO
