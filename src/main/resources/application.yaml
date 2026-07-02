@@ -19,6 +19,30 @@ spring:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
+  boot:
+    admin:
+      client:
+        url: http://localhost:9090
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: Login Service
+    version: 1.0
+    description: Login REST API
+    author: Naveen
+
 logging:
   file:
     name: C:/applications/logins/logs/logins.log

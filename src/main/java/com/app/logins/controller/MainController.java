@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.app.logins.utility.LoginConstants;
 
 @RestController
 @RequestMapping("/api/v1/users")
@@ -27,7 +28,7 @@ public class MainController {
         UserResponse user = userService.createUser(dto);
         logger.info("User created successfully with email: {}", dto.getEmail());
         ApiResponse<UserResponse>resp=new ApiResponse<>();
-        resp.setMessage("Uer created successfully");
+        resp.setMessage(LoginConstants.USER_CREATED);
         resp.setSuccess(true);
         resp.setData(user);
         return resp;
